@@ -39,3 +39,4 @@ public class ArithmeticProgression implements Implementation {
         System.out.println(Arrays.toString(answers));
     }
 }
+
