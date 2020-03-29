@@ -36,6 +36,9 @@ public class ArithmeticProgression implements Implementation {
             progressionSum = ((array[0] + array[terms - 1]) / 2) * terms;
             answers[j] = progressionSum;
         }
-        System.out.println(Arrays.toString(answers));
+
+        for (int answer : answers) {
+            System.out.print(answer + " ");
+        }
     }
 }
