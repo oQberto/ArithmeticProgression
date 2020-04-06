@@ -52,4 +52,3 @@ public class BodyMassIndex implements Implementation {
         }
     }
 }
-
