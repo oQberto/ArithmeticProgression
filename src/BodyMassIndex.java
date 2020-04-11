@@ -15,7 +15,7 @@ public class BodyMassIndex implements Implementation {
     private static double OBESITY = 30.0;
 
     @Override
-    public void Decision() throws IOException {
+    public void decision() throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         testsCount = Integer.parseInt(reader.readLine());
 

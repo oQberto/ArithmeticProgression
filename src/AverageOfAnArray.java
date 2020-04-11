@@ -2,10 +2,10 @@ import java.io.*;
 
 public class AverageOfAnArray implements Implementation {
     private static int avg;
-    private static int arraySum;
+    private static double arraySum;
 
     @Override
-    public void Decision() throws IOException {
+    public void decision() throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int testsCount = Integer.parseInt(reader.readLine());
 
@@ -15,8 +15,8 @@ public class AverageOfAnArray implements Implementation {
             String input = reader.readLine();
             String[] subStr = input.split(" ");
             for (String s : subStr) {
-                arraySum += Integer.parseInt(s);
-                avg = arraySum / (subStr.length - 1);
+                arraySum += Double.parseDouble(s);
+                avg = (int) Math.round(arraySum / (subStr.length - 1));
             }
             answers[i] = avg;
             arraySum = 0;

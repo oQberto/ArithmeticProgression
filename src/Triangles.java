@@ -8,7 +8,7 @@ public class Triangles implements Implementation {
     private static int VALUE;
 
     @Override
-    public void Decision() throws IOException {
+    public void decision() throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         testsCount = Integer.parseInt(reader.readLine());
 
