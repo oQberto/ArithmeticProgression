@@ -1,3 +1,6 @@
+package simpleMath;
+
+import Interface.*;
 import java.io.*;
 
 public class AverageOfAnArray implements Implementation {

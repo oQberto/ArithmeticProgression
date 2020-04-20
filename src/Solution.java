@@ -1,9 +1,8 @@
 import java.io.IOException;
-import java.util.Scanner;
-
+import beginnersProblems.ArrayCounters;
 public class Solution {
     public static void main(String[] args) throws IOException {
-        SumOfDigits sumOfDigits = new SumOfDigits();
-        sumOfDigits.decision();
+        ArrayCounters arrayCounters = new ArrayCounters();
+        arrayCounters.decision();
     }
 }

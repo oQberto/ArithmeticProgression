@@ -1,3 +1,6 @@
+package gameLogic;
+
+import Interface.*;
 import java.io.*;
 
 public class DiceRolling implements Implementation {

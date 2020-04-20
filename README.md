@@ -1,1 +1,1 @@
-# ArithmeticProgression
+# simpleMath.ArithmeticProgression
