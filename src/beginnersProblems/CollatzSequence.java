@@ -40,3 +40,4 @@ public class CollatzSequence implements Implementation {
         }
     }
 }
+
