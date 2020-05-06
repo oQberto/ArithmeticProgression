@@ -1,1 +1,1 @@
-# simpleMath.ArithmeticProgression
+# My simple quests.
