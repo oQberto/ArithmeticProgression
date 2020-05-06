@@ -7,6 +7,7 @@ import java.util.Arrays;
 
 public class CollatzSequence implements Implementation {
     int numberOfDigitsInInputLine;
+    int count = 0;
 
     String inputLine;
 
@@ -19,18 +20,8 @@ public class CollatzSequence implements Implementation {
         int[] arrayOfInputNumbers = Arrays.stream(inputLine.split(" ")).mapToInt(Integer::parseInt).toArray();
         int[] outputArray = new int[numberOfDigitsInInputLine];
 
-        int count = 0;
         for (int i = 0; i < arrayOfInputNumbers.length; i++) {
-            int intermediateValue = arrayOfInputNumbers[i];
-
-            while (intermediateValue != 1) {
-                if (intermediateValue % 2 == 0) {
-                    intermediateValue = intermediateValue / 2;
-                } else {
-                    intermediateValue = intermediateValue * 3 + 1;
-                }
-                count++;
-            }
+            computingOverArrayNumbers(arrayOfInputNumbers[i]);
             outputArray[i] = count;
             count = 0;
         }
@@ -39,5 +30,15 @@ public class CollatzSequence implements Implementation {
             System.out.print(answer + " ");
         }
     }
-}
 
+    private void computingOverArrayNumbers(int inputNumber) {
+        while (inputNumber != 1) {
+            if (inputNumber % 2 == 0) {
+                inputNumber = inputNumber / 2;
+            } else {
+                inputNumber = inputNumber * 3 + 1;
+            }
+            count++;
+        }
+    }
+}
