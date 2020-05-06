@@ -1,3 +1,6 @@
+/*
+https://www.codeabbey.com/index/task_view/collatz-sequence
+ */
 package beginnersProblems;
 
 import Interface.Implementation;
@@ -8,6 +11,7 @@ import java.util.Arrays;
 public class CollatzSequence implements Implementation {
     int numberOfDigitsInInputLine;
     int count = 0;
+    int[] outputArray;
 
     String inputLine;
 
@@ -18,7 +22,7 @@ public class CollatzSequence implements Implementation {
         inputLine = reader.readLine();
 
         int[] arrayOfInputNumbers = Arrays.stream(inputLine.split(" ")).mapToInt(Integer::parseInt).toArray();
-        int[] outputArray = new int[numberOfDigitsInInputLine];
+        outputArray = new int[numberOfDigitsInInputLine];
 
         for (int i = 0; i < arrayOfInputNumbers.length; i++) {
             computingOverArrayNumbers(arrayOfInputNumbers[i]);
@@ -26,9 +30,7 @@ public class CollatzSequence implements Implementation {
             count = 0;
         }
 
-        for (int answer : outputArray) {
-            System.out.print(answer + " ");
-        }
+        printAnswer();
     }
 
     private void computingOverArrayNumbers(int inputNumber) {
@@ -39,6 +41,12 @@ public class CollatzSequence implements Implementation {
                 inputNumber = inputNumber * 3 + 1;
             }
             count++;
+        }
+    }
+
+    private void printAnswer () {
+        for (int answer : outputArray) {
+            System.out.print(answer + " ");
         }
     }
 }

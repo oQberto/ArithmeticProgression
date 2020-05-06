@@ -1,3 +1,6 @@
+/*
+https://www.codeabbey.com/index/task_view/array-counters--ru
+ */
 package beginnersProblems;
 
 import Interface.Implementation;
@@ -6,10 +9,12 @@ import java.io.*;
 import java.util.Arrays;
 
 public class ArrayCounters implements Implementation {
-    String startValues;
-    String startArray;
+    private String startValues;
+    private String startArray;
 
-    int arrayRange;
+    private int arrayRange;
+    private int[] finalArray;
+    private int[] subStartArray;
 
     @Override
     public void decision() throws IOException {
@@ -20,20 +25,20 @@ public class ArrayCounters implements Implementation {
         String[] subStartValues = startValues.split(" ");
         arrayRange = Integer.parseInt(subStartValues[1]);
 
-        int[] subStartArray = Arrays.stream(startArray.split(" ")).mapToInt(Integer::parseInt).toArray();
-        int[] finalArray = new int[arrayRange];
+        subStartArray = Arrays.stream(startArray.split(" ")).mapToInt(Integer::parseInt).toArray();
+        finalArray = new int[arrayRange];
 
-        int count = 0;
+        countingNumberInAnArray();
+        printAnswer();
+    }
 
-        for (int i = 1; i <= arrayRange; i++) {
-            for (int intermediateValue : subStartArray) {
-                if (intermediateValue == i) {
-                    count++;
-                    finalArray[i - 1] = count;
-                }
-            }
-            count = 0;
+    private void countingNumberInAnArray() {
+        for (int value : subStartArray) {
+            finalArray[value - 1]++;
         }
+    }
+
+    private void printAnswer() {
         for (int answer : finalArray) {
             System.out.print(answer + " ");
         }
